@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Ping coming soon page</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+  We are launching soon!
+
+  Subscribe and get notified
+
+  Notify Me
+
+  &copy; Copyright Ping. All rights reserved.
+
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Your Name Here</a>.
+    </p>
+  </footer>
+</body>
+</html>
+
+const emailInputOne = document.querySelector(".input-one input");
+const emailInputTwo = document.querySelector(".input-two input");
+const labelOne = document.querySelector(".input-one");
+const labelTwo = document.querySelector(".input-two");
+const buttonOne = document.querySelector(".button-one");
+const buttonTwo = document.querySelector(".button-two");
+const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+const firstAlert = document.querySelector(".hero-section_email-alert");
+const secondAlert = document.querySelector(".signup_email-alert");
+
+const emailValidation = function (input, label) {
+  if (input.value.match(emailRegex)) {
+    input.style.borderColor = "black";
+    label.classList.remove("error");
+    label.classList.add("success");
+  } else {
+    input.style.borderColor = "red";
+    label.classList.remove("success");
+    label.classList.add("error");
+  }
+};
+
+buttonOne.addEventListener("click", function () {
+  emailValidation(emailInputOne, labelOne);
+});
+
+buttonTwo.addEventListener("click", function () {
+  emailValidation(emailInputTwo, labelTwo);
+});
+
+
+const btn = document.querySelector(".button-one");
+const secondBtn = document.querySelector(".button-two");
+const FirstAlert = document.querySelector("#first-alert");
+const SecondAlert = document.querySelector("#second-alert");
+
+btn.addEventListener("click", function() {
+  if (FirstAlert.style.display === "block") {
+    FirstAlert.style.display = "none";
+  } else {
+    FirstAlert.style.display = "block";
+  }
+});
+
+secondBtn.addEventListener("click", function() {
+  if (SecondAlert.style.display === "block") {
+    SecondAlert.style.display = "none";
+  } else {
+    SecondAlert.style.display = "block";
+  }
+});
+
+
+
+
+
+
+
+
+
+
+const btn = document.querySelector(".notify-button");
+const alert = document.querySelector(".alert");
+const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+const input = document.querySelector(".email-box");
+
+btn.addEventListener("click", function() {
+  if (alert.style.display === "block") {
+    alert.style.display = "none";
+  } else {
+    alert.style.display = "block";
+  }
+});
+
+input.addEventListener("input", function(){
+  if (input.value.match(emailRegex)) {
+    input.style.borderColor = "black";
+  } else {
+    input.style.borderColor = "red";
+  }
+});
